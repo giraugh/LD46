@@ -13,3 +13,4 @@ hframes = 6
 [node name="Arrows" type="Node2D" parent="."]
 position = Vector2( 0.457153, 23.8617 )
 script = ExtResource( 2 )
+emitsPerSecond = 1.133
