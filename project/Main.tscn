@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://HUD.gd" type="Script" id=2]
+[ext_resource path="res://Arial.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 2
+outline_color = Color( 0.282353, 1, 0.0196078, 1 )
+font_data = ExtResource( 3 )
+
+[node name="Main" type="Node2D"]
+position = Vector2( 2, 2 )
+script = ExtResource( 1 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="HUD"]
+anchor_left = 0.5
+anchor_top = -0.00175771
+anchor_right = 0.5
+anchor_bottom = -0.00175771
+margin_left = -512.0
+margin_right = 512.0
+margin_bottom = 65.0
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = SubResource( 1 )
+text = "Growing Up"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
