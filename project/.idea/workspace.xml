@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5818424-c4da-43aa-a74e-c15bc190e84d" name="Default Changelist" comment="" />
+    <list default="true" id="a5818424-c4da-43aa-a74e-c15bc190e84d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mono/assemblies/Debug/api_hash_cache.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/.mono/assemblies/Debug/api_hash_cache.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Player.gd" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,6 +56,7 @@
       <updated>1587185593872</updated>
       <workItem from="1587185600782" duration="843000" />
       <workItem from="1587186669817" duration="62000" />
+      <workItem from="1587186915005" duration="210000" />
     </task>
     <servers />
   </component>
@@ -73,6 +78,14 @@
       <screen x="52" y="23" width="1388" height="877" />
     </state>
     <state x="145" y="100" width="1110" height="701" key="DiffContextDialog/52.23.1388.877/-516.-1417.2560.1417@52.23.1388.877" timestamp="1587185882873" />
+    <state x="187" y="100" key="MergeDialog" timestamp="1587186983325">
+      <screen x="48" y="23" width="1392" height="877" />
+    </state>
+    <state x="187" y="100" key="MergeDialog/48.23.1392.877/-516.-1417.2560.1417@48.23.1392.877" timestamp="1587186983325" />
+    <state x="48" y="23" width="1392" height="877" key="MultipleFileMergeDialog" timestamp="1587186984808">
+      <screen x="48" y="23" width="1392" height="877" />
+    </state>
+    <state x="48" y="23" width="1392" height="877" key="MultipleFileMergeDialog/48.23.1392.877/-516.-1417.2560.1417@48.23.1392.877" timestamp="1587186984808" />
     <state x="517" y="105" key="RollbackChangesDialog" timestamp="1587185716587">
       <screen x="52" y="23" width="1388" height="877" />
     </state>
