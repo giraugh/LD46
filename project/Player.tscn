@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Player/pot.png" type="Texture" id=2]
+
+[node name="Player" type="Node2D"]
+position = Vector2( 485.797, 455.997 )
+script = ExtResource( 1 )
+
+[node name="pot" type="Sprite" parent="."]
+position = Vector2( -0.228088, 0.944305 )
+texture = ExtResource( 2 )
