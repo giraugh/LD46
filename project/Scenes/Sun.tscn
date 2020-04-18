@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/sun-states.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Arrows.gd" type="Script" id=2]
+
+[node name="Sun" type="Node2D"]
+position = Vector2( 346.287, 38.2411 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 6
+
+[node name="Arrows" type="Node2D" parent="."]
+position = Vector2( 0.457153, 23.8617 )
+script = ExtResource( 2 )
