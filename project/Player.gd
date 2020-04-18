@@ -11,7 +11,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 export var global_time = 0
 export var periods = 1.0
-export var speed = 1.13333333
+export var speed = .95
 export var width = 20.0
 export var heightMid = 150.0
 export var heightVar = 20.0
