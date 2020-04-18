@@ -15,15 +15,25 @@ export var speed = 1.13333333
 export var width = 20.0
 export var heightMid = 150.0
 export var heightVar = 20.0
+
 func _process(delta):
 	time += delta
+	var height = get_height(time)
+	$head.set_position(Vector2(xposplayer(height,height), -height))
+	$head.set_rotation(head_angle(time))
 	update()
+
+func get_height (time):
+	return heightMid + heightVar * sin(2 * periods * 2 * PI * time * speed)
+	
+func head_angle(time):
+	var height = get_height(time)
+	return atan(periods * 2 * PI / height * width * cos(periods * 2 * PI * (1 + time * speed)) )
 
 func xposplayer(h, height):
 	return h / height * width * sin(periods * 2 * PI * (h / height + time * speed)) 
 
 func _draw():
-    print(time)
-    var height = heightMid + heightVar * sin(2 * periods * 2 * PI * time * speed)
+    var height = get_height(time)
     for i in range(int(height)):
         draw_line(Vector2(xposplayer(i, height),-i), Vector2(xposplayer(i+1, height), -(i+1)), ColorN("green"), 16)
