@@ -12,30 +12,43 @@ func _ready():
 export var global_time = 0
 export var periods = 1.0
 export var speed = .95
-export var width = 20.0
+export var swing = 20.0
 export var heightMid = 150.0
-export var heightVar = 20.0
+export var bounce = 20.0
+export var leafHeight = 100.0
+export var softness = 5.0
+
 
 func _process(delta):
 	global_time += delta
 	var height = get_height(global_time)
 	$head.set_position(Vector2(xposplayer(height,height, global_time), -height))
 	$head.set_rotation(head_angle(global_time))
+	$leaf.set_position(Vector2(xposplayer(leafHeight, height, global_time), -leafHeight))
+	var rotation = $leaf.get_rotation()
+	var wantedRotation = angle_player(leafHeight, global_time)
+	$leaf.set_rotation((wantedRotation - rotation) / softness + rotation)
 	update()
-
+	
 func get_height (time):
-	return heightMid + heightVar * sin(2 * periods * 2 * PI * time * speed)
+	return heightMid + bounce * sin(2 * periods * 2 * PI * time * speed)
+	
+func angle_player(h, time):
+	var height = get_height(time)
+	return atan(periods * 2 * PI * (h / height) / height * swing * cos(periods * 2 * PI * (h / height + time * speed)) )
+	
 	
 func head_angle(time):
 	var height = get_height(time)
-	return atan(periods * 2 * PI / height * width * cos(periods * 2 * PI * (1 + time * speed)) )
+	return atan(periods * 2 * PI / height * swing * cos(periods * 2 * PI * (1 + time * speed)) )
 
 func xposplayer(h, height, time):
-	return h / height * width * sin(periods * 2 * PI * (h / height + time * speed)) 
+	return h / height * swing * sin(periods * 2 * PI * (h / height + time * speed)) 
 
 func _draw():
 	var height = get_height(global_time)
 	
 	for i in range(int(height)):
-		draw_line(Vector2(xposplayer(i, height, global_time),-i), Vector2(xposplayer(i+1, height,global_time), -(i+1)), ColorN("green"), 16)
+		draw_line(Vector2(xposplayer(i, height, global_time) + 2.5,-i), Vector2(xposplayer(i+1, height,global_time) + 2.5, -(i+1)), Color("#3e8948"), 11)
+		draw_line(Vector2(xposplayer(i, height, global_time) - 5.5,-i), Vector2(xposplayer(i+1, height,global_time) - 5.5, -(i+1)), Color("#265c42"), 5)
 	
