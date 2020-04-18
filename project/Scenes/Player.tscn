@@ -12,6 +12,8 @@ script = ExtResource( 1 )
 position = Vector2( -0.228088, 0.944305 )
 texture = ExtResource( 2 )
 
-[node name="head" type="Sprite" parent="."]
+[node name="head" type="Sprite" parent="." groups=[
+"player",
+]]
 position = Vector2( 1.79272, -212.163 )
 texture = ExtResource( 3 )

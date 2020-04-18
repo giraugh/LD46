@@ -35,5 +35,7 @@ func xposplayer(h, height, time):
 
 func _draw():
 	var height = get_height(global_time)
+	
 	for i in range(int(height)):
 		draw_line(Vector2(xposplayer(i, height, global_time),-i), Vector2(xposplayer(i+1, height,global_time), -(i+1)), ColorN("green"), 16)
+	
