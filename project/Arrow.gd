@@ -21,7 +21,9 @@ func _ready():
 func _process(delta):
 	time += delta
 	self.set_relative_scale()
-	set_position(Vector2(0, speed * time))
+	var player_pos = player.global_position
+	var direction = (player_pos - global_position).normalized()
+	set_position(get_position() + direction * speed * delta)
 	if self.get_distance_to_player() < self.speed:
 		queue_free()
 

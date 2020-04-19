@@ -19,6 +19,12 @@ config/name="Ludum Dare 46"
 run/main_scene="res://Scenes/World.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
