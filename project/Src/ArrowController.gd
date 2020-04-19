@@ -24,6 +24,7 @@ func spawn_arrow():
 		child.set_player(player_nodes[0])
 		child.set_rotation(PI / 2 * (randi() % 4))
 		self.add_child(child)
+
 	else:
 		print_debug('Warning: No player objects in group ', PLAYER_GROUP_ID, ', arrows will not spawn.')
 		child.queue_free()
