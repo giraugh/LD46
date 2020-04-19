@@ -19,6 +19,10 @@ config/name="Ludum Dare 46"
 run/main_scene="res://Scenes/World.tscn"
 config/icon="res://icon.png"
 
+[gdnative]
+
+singletons=[  ]
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
