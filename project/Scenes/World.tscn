@@ -41,9 +41,9 @@ __meta__ = {
 
 [node name="ColorRect2" type="ColorRect" parent="Backgrounds"]
 margin_left = -2899.5
-margin_top = 3093.98
+margin_top = 3096.21
 margin_right = 2205.5
-margin_bottom = 8198.98
+margin_bottom = 8201.21
 rect_pivot_offset = Vector2( 3007.36, 1152.19 )
 color = Color( 0.760784, 0.521569, 0.411765, 1 )
 __meta__ = {
@@ -73,7 +73,7 @@ __meta__ = {
 }
 
 [node name="background-wall" type="Sprite" parent="."]
-position = Vector2( 789.404, 149.729 )
+position = Vector2( 789.404, 152.102 )
 scale = Vector2( 5.64457, 5.64457 )
 texture = ExtResource( 5 )
 
