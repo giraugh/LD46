@@ -126,7 +126,6 @@ func _draw():
 
 func _on_Area2D_area_shape_entered(area_id, area, area_shape, self_shape):
 	var scene = area.get_parent()
-	print("Add scene ", scene)
 	scene.add_to_group("node_in_plant")
 
 
@@ -134,6 +133,5 @@ func _on_Area2D_area_shape_exited(area_id, area, area_shape, self_shape):
 	if area:
 		var scene = area.get_parent()
 		if scene.is_in_group("node_in_plant"):
-			print("Remove scene (miss) ", scene)
 			scene.remove_from_group("node_in_plant")
 			scene.current_state = "bad"
