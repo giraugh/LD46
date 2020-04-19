@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ff4af730-4a5e-413a-80ec-c83832e508f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Scenes/Leaf.gd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/Scenes/Leaf.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/project/Scenes/Leaf.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/Scenes/Sun.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/project/Scenes/Sun.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Src/ArrowController.gd" beforeDir="false" afterPath="$PROJECT_DIR$/project/Src/ArrowController.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project/project.godot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Scenes/World.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/project/Scenes/World.tscn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,14 +51,30 @@
       <option name="presentableId" value="Default" />
       <updated>1587186731946</updated>
       <workItem from="1587186735156" duration="178000" />
-      <workItem from="1587263381553" duration="476000" />
+      <workItem from="1587263381553" duration="981000" />
     </task>
+    <task id="LOCAL-00001" summary="Refactor project to simplify structure">
+      <created>1587264098469</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587264098469</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactor project to simplify structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor project to simplify structure" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="356" y="-1194" key="CommitChangelistDialog2" timestamp="1587264097684">
+      <screen x="-516" y="-1417" width="2560" height="1417" />
+    </state>
+    <state x="356" y="-1194" key="CommitChangelistDialog2/60.23.1380.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587264097684" />
     <state x="-416" y="-1317" width="2360" height="1217" key="DiffContextDialog" timestamp="1587263894174">
       <screen x="-516" y="-1417" width="2560" height="1417" />
     </state>
@@ -73,6 +87,10 @@
       <screen x="-516" y="-1417" width="2560" height="1417" />
     </state>
     <state x="472" y="-995" key="MultipleFileMergeDialog/60.23.1380.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587263412334" />
+    <state x="364" y="-973" key="Vcs.Push.Dialog.v2" timestamp="1587265192855">
+      <screen x="-516" y="-1417" width="2560" height="1417" />
+    </state>
+    <state x="364" y="-973" key="Vcs.Push.Dialog.v2/60.23.1380.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587265192855" />
     <state x="429" y="-1092" width="670" height="676" key="search.everywhere.popup" timestamp="1587263306138">
       <screen x="-516" y="-1417" width="2560" height="1417" />
     </state>

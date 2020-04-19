@@ -3,7 +3,6 @@
 [ext_resource path="res://Sprites/plant/leafs/leaf2-alive.png" type="Texture" id=1]
 [ext_resource path="res://Src/Leaf.gd" type="Script" id=2]
 
-
 [node name="leaf" type="Node2D"]
 position = Vector2( -104, -52.0001 )
 script = ExtResource( 2 )
