@@ -23,7 +23,7 @@ config/icon="res://icon.png"
 
 window/size/resizable=false
 window/stretch/mode="viewport"
-window/stretch/aspect="keep_width"
+window/stretch/aspect="keep"
 
 [rendering]
 
