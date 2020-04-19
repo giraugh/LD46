@@ -9,8 +9,7 @@ export var arrow_states: Dictionary = {
 # Constants/Configurable variables
 export var MIN_SCALE: int = 1
 export var MAX_SCALE: int = 3
-export var X_MOVEMENT_SPEED: int = 8
-export var Y_MOVEMENT_SPEED: int = 4
+export var MOVEMENT_SPEED: int = 20
 export var INITAL_STATE: String = "default"
 
 # Setters/Getters
@@ -33,26 +32,15 @@ func _ready():
 func _process(delta):
 	time += delta
 	self.visible = true
-	self.acc_toward_player()
+	self.acc_toward_player(delta)
 	self.update_relative_scale()
-	if self.get_distance_to_player() < Y_MOVEMENT_SPEED:
+	if self.get_distance_to_player() < MOVEMENT_SPEED:
 		queue_free()
 
-func acc_toward_player():
-	var player_x = global_position.x
-	var player_y = global_position.y
-	if self.player:
-		player_x = self.get_player().global_position.x
-		player_y = self.get_player().global_position.y
-
-	var dist_x = pow(1/abs(player_x - self.global_position.x),2) * (-1 if player_x < self.global_position.x else 1)
-	var dist_y = pow( 1.0/abs(player_y - self.global_position.y), 2) * (-1 if player_y <  self.global_position.y else 1)
-
-	var new_x_pos = self.global_position.x + dist_x
-	var new_y_pos = self.global_position.y + dist_y
-	print_debug(self, '(POSCHANGE)', global_position,' > ',Vector2(new_x_pos, new_y_pos))
-	
-	self.global_position = Vector2(new_x_pos, new_y_pos)
+func acc_toward_player(delta):
+	var player_pos = player.global_position
+	var direction = (player_pos - global_position).normalized()
+	set_position(get_position() + direction * MOVEMENT_SPEED  * delta)
 
 
 # Scale the Arrow size as it gets close to the player

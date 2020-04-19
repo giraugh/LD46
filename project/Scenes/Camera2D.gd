@@ -26,9 +26,9 @@ func show_menu():
 func _process(delta):
 	# Increment time
 	if state == 'game':
-		global_time = min(global_time, ease_duration)
+		global_time = min(global_time + delta, ease_duration) 
 	else:
-		global_time = max(global_time, 0)
+		global_time = max(global_time - delta, 0)
 	
 	# Phase is time percentage with ease function applied
 	phase = easeInOutQuint(min(1, global_time / ease_duration))
@@ -48,3 +48,9 @@ func easeInOutQuint(x):
 	if x < 0.5:
 		return 16 * pow(x, 5)
 	return 1 - pow(-2 * x + 2, 5) / 2
+
+
+func _on_TextureButton_pressed():
+	print_debug("Does this work" + state)
+	state = "game"
+	print_debug("Does this work" + state)

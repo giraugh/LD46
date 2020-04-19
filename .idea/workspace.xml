@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff4af730-4a5e-413a-80ec-c83832e508f7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.import/pot.png-e002bd02bb4eee6d33fe32e4541c2a2c.md5" beforeDir="false" afterPath="$PROJECT_DIR$/project/.import/pot.png-e002bd02bb4eee6d33fe32e4541c2a2c.md5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/.import/pot.png-e002bd02bb4eee6d33fe32e4541c2a2c.stex" beforeDir="false" afterPath="$PROJECT_DIR$/project/.import/pot.png-e002bd02bb4eee6d33fe32e4541c2a2c.stex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Sprites/pot.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/project/Sprites/pot.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Arrow.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Scenes/Camera2D.gd" beforeDir="false" afterPath="$PROJECT_DIR$/project/Scenes/Camera2D.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Scenes/World.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/project/Scenes/World.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/Src/Arrow.gd" beforeDir="false" afterPath="$PROJECT_DIR$/project/Src/Arrow.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Src/ArrowController.gd" beforeDir="false" afterPath="$PROJECT_DIR$/project/Src/ArrowController.gd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
