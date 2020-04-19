@@ -1,27 +1,50 @@
 extends Camera2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export(int) var ease_duration = 8 # in seconds
 
 var background_original_scale = Vector2(0,0)
 var background_original_position = Vector2(221,587)
 var background_target_position = Vector2(221,587)
-# Called when the node enters the scene tree for the first time.
+var zoom_start = 4
+var zoom_end = 1.3
+var global_time = 0
+var state = 'menu'
+
 func _ready():
 	background_original_scale = get_parent().get_node("Scenery").get_scale()
 
 export var phase = 0
-export var background = "background-gardenl"
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-var global_time = 0
+
+# Zoom into window to show game
+func show_game():
+	state = 'game'
+
+# Zoom out from window to hide game
+func show_menu():
+	state = 'menu'
+
 func _process(delta):
-	global_time += delta
-	phase = (1 + sin(global_time)) / 2
-	var zoom = lerp(4,1.3, phase)
-	var background = get_parent ().get_node("Scenery")
-	background.set_scale(background_original_scale * zoom / 1.3)
+	# Increment time
+	if state == 'game':
+		global_time = min(global_time, ease_duration)
+	else:
+		global_time = max(global_time, 0)
+	
+	# Phase is time percentage with ease function applied
+	phase = easeInOutQuint(min(1, global_time / ease_duration))
+	
+	# Calculate zoom
+	var zoom = lerp(zoom_start, zoom_end, phase)
+	var background = get_parent().get_node("Scenery")
+	
+	# Set positions, scale and zoom for this step
+	background.set_scale(background_original_scale * zoom / zoom_end)
 	background.set_position(background_original_position.linear_interpolate(background_target_position, phase))
 	set_offset(Vector2(0,lerp(0,80, phase)))
 	set_zoom(Vector2(1,1) * zoom)
+
+# Utility for easing function
+func easeInOutQuint(x):
+	if x < 0.5:
+		return 16 * pow(x, 5)
+	return 1 - pow(-2 * x + 2, 5) / 2
