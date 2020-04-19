@@ -1,6 +1,6 @@
 extends Camera2D
 
-export(int) var ease_duration = 8 # in seconds
+export(int) var ease_duration = 4 # in seconds
 
 var background_original_scale = Vector2(0,0)
 var background_original_position = Vector2(221,587)
@@ -31,7 +31,7 @@ func _process(delta):
 		global_time = max(global_time - delta, 0)
 	
 	# Phase is time percentage with ease function applied
-	phase = easeInOutQuint(min(1, global_time / ease_duration))
+	phase = easeInOutSine(min(1, global_time / ease_duration))
 	
 	# Calculate zoom
 	var zoom = lerp(zoom_start, zoom_end, phase)
@@ -44,10 +44,8 @@ func _process(delta):
 	set_zoom(Vector2(1,1) * zoom)
 
 # Utility for easing function
-func easeInOutQuint(x):
-	if x < 0.5:
-		return 16 * pow(x, 5)
-	return 1 - pow(-2 * x + 2, 5) / 2
+func easeInOutSine(x):
+	return -(cos(PI * x) - 1) / 2
 
 
 func _on_TextureButton_pressed():
