@@ -1,0 +1,20 @@
+# Created by https://www.gitignore.io/api/godot
+# Edit at https://www.gitignore.io/?templates=godot
+
+### Godot ### 
+
+# Godot-specific ignores
+project/.import/
+project/export.cfg
+project/export_presets.cfg
+
+# Mono-specific ignores
+
+project/.mono/
+
+# IDE Specific Ignores
+shell.nix
+nix/
+.idea
+project/.idea
+# End of https://www.gitignore.io/api/godot
