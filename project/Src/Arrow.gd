@@ -1,5 +1,12 @@
 extends Node2D
 
+enum DIRECTIONS{
+	UP=0
+	RIGHT=1
+	DOWN=2
+	LEFT=3
+}
+
 export var arrow_states: Dictionary = {
 	"great": preload("res://Sprites/Arrows/sprite-arrow-great.png"),
 	"bad": preload("res://Sprites/Arrows/sprite-arrow-bad.png"),
@@ -15,14 +22,15 @@ export var INITAL_STATE: String = "default"
 # Setters/Getters
 var current_state setget current_state_set, current_state_get
 var player setget set_player, get_player
+var orientation setget set_orientation, get_orientation
 
 # Spawn Variables
 onready var spawn_position = self.get_parent().global_position
+onready var sprite = get_node("Area2D/sprite-arrow")
 
 # Class variables
 var time = 0
 
-onready var sprite = get_node("sprite-arrow")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,6 +47,10 @@ func _process(delta):
 	
 	# Move towards player
 	self.update_position()
+	
+	if not self.get_node("VisibilityNotifier2D").is_on_screen():
+		print_debug(self, " is now invisible, freeing resource")
+		queue_free()
 
 func update_position():
 	var duration = 4
@@ -84,6 +96,18 @@ func current_state_get():
 
 func easeInSin(x):
 	return 0.2 * x + sin((x * PI) / 2)
+	
+func get_orientation():
+	if orientation == 0:
+		return "up"
+	elif orientation == 1:
+		return "right"
+	elif orientation == 2:
+		return "down"
+	elif orientation == 3:
+		return "left"
 
-func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
+func set_orientation(new_orientation: int):
+	self.set_rotation(PI / 2 * new_orientation)
+	orientation = new_orientation
+	

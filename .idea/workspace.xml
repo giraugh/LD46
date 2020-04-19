@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff4af730-4a5e-413a-80ec-c83832e508f7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/project/Arrow.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Scenes/Camera2D.gd" beforeDir="false" afterPath="$PROJECT_DIR$/project/Scenes/Camera2D.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Scenes/World.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/project/Scenes/World.tscn" afterDir="false" />
+    <list default="true" id="ff4af730-4a5e-413a-80ec-c83832e508f7" name="Default Changelist" comment="Refactor project to simplify structure">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Scenes/Leaf.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/project/Scenes/Leaf.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/Src/Arrow.gd" beforeDir="false" afterPath="$PROJECT_DIR$/project/Src/Arrow.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Src/ArrowController.gd" beforeDir="false" afterPath="$PROJECT_DIR$/project/Src/ArrowController.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Src/Leaf.gd" beforeDir="false" afterPath="$PROJECT_DIR$/project/Src/Leaf.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Src/Player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/project/Src/Player.gd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,9 +93,14 @@
       <screen x="-516" y="-1417" width="2560" height="1417" />
     </state>
     <state x="364" y="-973" key="Vcs.Push.Dialog.v2/60.23.1380.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587265192855" />
-    <state x="429" y="-1092" width="670" height="676" key="search.everywhere.popup" timestamp="1587263306138">
+    <state x="-416" y="-1317" width="2360" height="1217" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587291541093">
       <screen x="-516" y="-1417" width="2560" height="1417" />
     </state>
+    <state x="-416" y="-1317" width="2360" height="1217" key="com.intellij.history.integration.ui.views.FileHistoryDialog/54.23.1386.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587291541093" />
+    <state x="429" y="-1092" width="670" height="676" key="search.everywhere.popup" timestamp="1587291526119">
+      <screen x="-516" y="-1417" width="2560" height="1417" />
+    </state>
+    <state x="429" y="-1092" width="670" height="676" key="search.everywhere.popup/54.23.1386.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587291526119" />
     <state x="429" y="-1092" width="670" height="676" key="search.everywhere.popup/60.23.1380.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587263306138" />
   </component>
 </project>

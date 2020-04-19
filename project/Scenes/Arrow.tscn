@@ -21,6 +21,5 @@ position = Vector2( -0.538475, 0.448726 )
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-visible = false
 position = Vector2( 0.179489, 0.17949 )
-[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+rect = Rect2( 0, 0, 20, 20 )
