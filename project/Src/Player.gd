@@ -32,7 +32,7 @@ var leaves = []
 
 func _process(delta):
 	global_time += delta
-	growth = global_time / 30
+	#growth = global_time / 30
 	var height = get_height(global_time)
 	$head.set_position(Vector2(xposplayer(height,height, global_time), -height))
 	$head.set_rotation(head_angle(global_time))
