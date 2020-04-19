@@ -22,6 +22,7 @@ func show_game():
 # Zoom out from window to hide game
 func show_menu():
 	state = 'menu'
+	get_node("/root/World/Scenery/Sun").emitting = false
 
 func _process(delta):
 	# Increment time

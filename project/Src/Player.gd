@@ -78,15 +78,21 @@ func _unhandled_key_input(event):
 		var target_arrow = arrows[0]
 		var orientation = target_arrow.orientation
 		if event.is_action_pressed("ui_" + orientation):
-			print_debug("Action Hit")
-			grow()
-			target_arrow.current_state = "great"
+			on_arrow_hit(target_arrow)
 		else:
-			print_debug("Action Miss")
-			shrink()
-			target_arrow.current_state = "bad"
-		target_arrow.remove_from_group("node_in_plant")
+			on_arrow_miss(target_arrow)
 
+func on_arrow_miss(arrow):
+	print_debug("Action Miss")
+	self.shrink()
+	arrow.current_state = "bad"
+	arrow.remove_from_group("node_in_plant")
+	
+func on_arrow_hit(arrow):
+	print_debug("Action Hit")
+	grow()
+	arrow.current_state = "great"
+	arrow.remove_from_group("node_in_plant")
 
 func grow():
 	growth_target = min(1, growth_amount + growth_target)
@@ -134,6 +140,4 @@ func _on_Area2D_area_shape_exited(area_id, area, area_shape, self_shape):
 	if area:
 		var scene = area.get_parent()
 		if scene.is_in_group("node_in_plant"):
-			print("Remove scene (miss) ", scene)
-			scene.remove_from_group("node_in_plant")
-			scene.current_state = "bad"
+			on_arrow_miss(scene)

@@ -1,12 +1,5 @@
 extends Node2D
 
-enum DIRECTIONS{
-	UP=0
-	RIGHT=1
-	DOWN=2
-	LEFT=3
-}
-
 export var arrow_states: Dictionary = {
 	"great": preload("res://Sprites/Arrows/sprite-arrow-great.png"),
 	"bad": preload("res://Sprites/Arrows/sprite-arrow-bad.png"),
@@ -14,8 +7,8 @@ export var arrow_states: Dictionary = {
 }
 
 # Constants/Configurable variables
-export var MIN_SCALE: int = .3
-export var MAX_SCALE: int = 1.5
+export var MIN_SCALE: int = 1
+export var MAX_SCALE: int = 2
 export var MOVEMENT_SPEED: int = 20
 export var INITAL_STATE: String = "default"
 
@@ -30,7 +23,6 @@ onready var sprite = get_node("Area2D/sprite-arrow")
 
 # Class variables
 var time = 0
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,7 +42,7 @@ func _process(delta):
 	
 	if not self.get_node("VisibilityNotifier2D").is_on_screen():
 		print_debug(self, " is now invisible, freeing resource")
-		queue_free()
+		self.free()
 
 func update_position():
 	var duration = 4

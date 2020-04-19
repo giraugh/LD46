@@ -22,3 +22,4 @@ func _process(delta):
 	global_time += delta
 	var current_scale = get_scale()
 	set_scale((target_scale - current_scale) / grow_delay * delta+ current_scale)
+

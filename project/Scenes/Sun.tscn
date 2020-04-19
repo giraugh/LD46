@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/sun-states.png" type="Texture" id=1]
-[ext_resource path="res://Src/ArrowController.gd" type="Script" id=2]
 [ext_resource path="res://Src/Sun.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -56,9 +55,3 @@ frames = SubResource( 7 )
 animation = "happy"
 frame = 1
 playing = true
-
-[node name="ArrowController" type="Node2D" parent="." groups=[
-"arrowcontroller",
-]]
-script = ExtResource( 2 )
-PLAYER_GROUP_ID = "player"
