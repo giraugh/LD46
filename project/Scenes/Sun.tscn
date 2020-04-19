@@ -4,15 +4,12 @@
 [ext_resource path="res://Src/ArrowController.gd" type="Script" id=2]
 
 [node name="Sun" type="Node2D"]
-position = Vector2( 845.434, 81.7207 )
+position = Vector2( 346.287, 38.2411 )
 
-[node name="Sun" type="Sprite" parent="."]
-position = Vector2( 2.46112, 1.52588e-05 )
+[node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 6
 
 [node name="ArrowController" type="Node2D" parent="."]
-position = Vector2( -0.363251, 3.35244 )
-z_index = 1
+position = Vector2( 0.457153, 23.8617 )
 script = ExtResource( 2 )
-PLAYER_GROUP_ID = "player"

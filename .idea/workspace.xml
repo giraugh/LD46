@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ff4af730-4a5e-413a-80ec-c83832e508f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bin/x11/release/libgitapi.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/git_api.gdnlib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/git_api.gdns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Scenes/Leaf.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Scenes/Leaf.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/project/Scenes/Leaf.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Scenes/Sun.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/project/Scenes/Sun.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Src/ArrowController.gd" beforeDir="false" afterPath="$PROJECT_DIR$/project/Src/ArrowController.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project/project.godot" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1587186731946</updated>
       <workItem from="1587186735156" duration="178000" />
-      <workItem from="1587263381553" duration="257000" />
+      <workItem from="1587263381553" duration="476000" />
     </task>
     <servers />
   </component>
@@ -59,6 +61,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-416" y="-1317" width="2360" height="1217" key="DiffContextDialog" timestamp="1587263894174">
+      <screen x="-516" y="-1417" width="2560" height="1417" />
+    </state>
+    <state x="-416" y="-1317" width="2360" height="1217" key="DiffContextDialog/60.23.1380.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587263894174" />
     <state x="212" y="-1070" key="MergeDialog" timestamp="1587263412261">
       <screen x="-516" y="-1417" width="2560" height="1417" />
     </state>
