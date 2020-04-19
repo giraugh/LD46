@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/background-wall.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/background-gardenl.png" type="Texture" id=2]
+
+[node name="Background" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -763.079
+margin_top = -607.251
+margin_right = 730.921
+margin_bottom = 738.749
+color = Color( 0.760784, 0.521569, 0.411765, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 100
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="background-gardenl" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 28.6686, -11.0264 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="Wall" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( -1.9507, 1.46303 )
+texture = ExtResource( 1 )
