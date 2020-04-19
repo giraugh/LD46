@@ -1,27 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/pot.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/plant/head.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/plant/leafs/leaf2-alive.png" type="Texture" id=4]
 
 [node name="Player" type="Node2D"]
 position = Vector2( 485.797, 455.997 )
 script = ExtResource( 1 )
+speed = 1.0
 leafHeight = 60.0
 
 [node name="pot" type="Sprite" parent="."]
 position = Vector2( -0.228088, 0.944305 )
 texture = ExtResource( 2 )
-
-[node name="leaf" type="Node2D" parent="."]
-position = Vector2( -104, -52.0001 )
-
-[node name="leaf" type="Sprite" parent="leaf"]
-position = Vector2( -37.3068, -6.73495 )
-rotation = -0.544543
-scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
 
 [node name="head" type="Sprite" parent="." groups=[
 "player",
