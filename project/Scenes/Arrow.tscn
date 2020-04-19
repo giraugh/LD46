@@ -7,6 +7,7 @@
 extents = Vector2( 6.6159, 6.64092 )
 
 [node name="Arrow" type="Node2D"]
+visible = false
 z_index = 2
 script = ExtResource( 1 )
 

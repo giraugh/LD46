@@ -41,8 +41,7 @@ func _process(delta):
 	self.update_position()
 	
 	if not self.get_node("VisibilityNotifier2D").is_on_screen():
-		print_debug(self, " is now invisible, freeing resource")
-		self.free()
+		queue_free()
 
 func update_position():
 	var duration = 4
