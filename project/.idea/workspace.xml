@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5818424-c4da-43aa-a74e-c15bc190e84d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mono/assemblies/Debug/api_hash_cache.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/.mono/assemblies/Debug/api_hash_cache.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Player.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arrow.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HUD.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.tscn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/Arrow.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Arrow.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/Arrows.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/Player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Player.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/Sun.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Sun.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/World.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/World.tscn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +64,7 @@
       <updated>1587185593872</updated>
       <workItem from="1587185600782" duration="843000" />
       <workItem from="1587186669817" duration="62000" />
-      <workItem from="1587186915005" duration="210000" />
+      <workItem from="1587186915005" duration="662000" />
     </task>
     <servers />
   </component>

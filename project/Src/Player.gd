@@ -36,11 +36,11 @@ func _process(delta):
 	var height = get_height(global_time)
 	$head.set_position(Vector2(xposplayer(height,height, global_time), -height))
 	$head.set_rotation(head_angle(global_time))
-	
+
 	heightMid = lerp(minHeight, maxHeight, growth)
 	bounce = lerp(minBounce, maxBounce, growth)
 	swing = lerp(minSwing, maxSwing, growth)
-	
+
 	if len(leaves) < int((heightMid - leaf_distance_from_head) / leaf_difference):
 		var new_leaf = load("res://Scenes/Leaf.tscn").instance()
 		if not left_leaf_next:
@@ -56,25 +56,25 @@ func _process(delta):
 		leaf_node.set_position(Vector2(xposplayer(leaf_height, height, global_time), -leaf_height))
 		var rotation = leaf_node.get_rotation()
 		var bounce_phase = (get_height(global_time) - heightMid) / bounce
-		
+
 		# Includes considerations for how far up the leaf is, how
 		# and how bouncy we actually are
 		var this_leaf_bounce = bounce_phase * (leaf_height / heightMid) * (bounce / maxBounce) * max_leaf_bounce
-		
+
 		var wantedRotation = angle_player(leaf_height, global_time) + this_leaf_bounce
 		leaf_node.set_rotation((wantedRotation - rotation) / softness + rotation)
 	update()
-	
+
 func get_height (time):
 	var heightMid = lerp(minHeight, maxHeight, growth)
 	var bounce = lerp(minBounce, maxBounce, growth)
 	return heightMid + bounce * sin(2 * periods * 2 * PI * time * speed)
-	
+
 func angle_player(h, time):
 	var height = get_height(time)
-	
+
 	return atan(periods * 2 * PI * (h / height) / height * swing * cos(periods * 2 * PI * (h / height + time * speed)) )
-	
+
 	
 func head_angle(time):
 	var height = get_height(time)
@@ -84,7 +84,7 @@ func xposplayer(h, height, time):
 	var heightMid = lerp(minHeight, maxHeight, growth)
 	var bounce = lerp(minBounce, maxBounce, growth)
 	var swing = lerp(minSwing, maxSwing, growth)
-	return h / height * swing * sin(periods * 2 * PI * (h / height + time * speed)) 
+	return h / height * swing * sin(periods * 2 * PI * (h / height + time * speed))
 
 func _draw():
 	var height = get_height(global_time)
