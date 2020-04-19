@@ -79,14 +79,25 @@ func _unhandled_key_input(event):
 		var orientation = target_arrow.orientation
 		if event.is_action_pressed("ui_" + orientation):
 			print_debug("Action Hit")
-			grow()
+			did_hit(target_arrow)
 			target_arrow.current_state = "great"
 		else:
 			print_debug("Action Miss")
-			shrink()
+			did_miss(target_arrow)
 			target_arrow.current_state = "bad"
 		target_arrow.remove_from_group("node_in_plant")
 
+func did_hit(arrow):
+	grow()
+	$"sprite-okbox".animation = 'good'# box will reset itself after a delay
+	var effect = load("res://Scenes/ArrowTrail.tscn").instance()
+	effect.position = Vector2(0, 0)
+	effect.orientation = arrow.orientation
+	$"sprite-okbox".add_child(effect)
+
+func did_miss(arrow):
+	shrink()
+	$"sprite-okbox".animation = 'bad' # box will reset itself after a delay
 
 func grow():
 	growth_target = min(1, growth_amount + growth_target)
@@ -135,3 +146,4 @@ func _on_Area2D_area_shape_exited(area_id, area, area_shape, self_shape):
 		if scene.is_in_group("node_in_plant"):
 			scene.remove_from_group("node_in_plant")
 			scene.current_state = "bad"
+			did_miss(scene)
