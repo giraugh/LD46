@@ -7,8 +7,8 @@ export var arrow_states: Dictionary = {
 }
 
 # Constants/Configurable variables
-export var MIN_SCALE: int = 1
-export var MAX_SCALE: int = 3
+export var MIN_SCALE: int = .3
+export var MAX_SCALE: int = 2
 export var MOVEMENT_SPEED: int = 20
 export var INITAL_STATE: String = "default"
 
@@ -30,24 +30,27 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# Increment time counter
 	time += delta
+	
+	# Set visible once scale can be set correctly
 	self.visible = true
-	self.acc_toward_player(delta)
 	self.update_relative_scale()
-	if self.get_distance_to_player() < MOVEMENT_SPEED:
-		queue_free()
+	
+	# Move towards player
+	self.update_position()
 
-func acc_toward_player(delta):
-	var player_pos = player.global_position
-	var direction = (player_pos - global_position).normalized()
-	set_position(get_position() + direction * MOVEMENT_SPEED  * delta)
-
+func update_position():
+	var duration = 4
+	var x = (time / duration)
+	var percent = easeInSin(min(1, max(0, x)))
+	self.global_position = self.get_parent().global_position.linear_interpolate(player.global_position, percent)
 
 # Scale the Arrow size as it gets close to the player
 func update_relative_scale():
 	var dist1 = self.get_distance_to_player()
-	var current_scale = (150.0/dist1)
-	self.set_scale(Vector2(current_scale, current_scale))
+	var current_scale = lerp(MIN_SCALE, MAX_SCALE, min(1, 1 - dist1 / self.get_original_distance()))
+	self.set_scale(Vector2.ONE * current_scale)
 
 # Get the distance between this arrows spawn point and the current player position
 func get_original_distance():
@@ -78,3 +81,9 @@ func current_state_set(new_state):
 
 func current_state_get():
 	return current_state
+
+func easeInSin(x):
+	return 0.2 * x + sin((x * PI) / 2)
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()

@@ -24,7 +24,6 @@ func spawn_arrow():
 	var player_nodes = self.get_tree().get_nodes_in_group(PLAYER_GROUP_ID)
 	if player_nodes:
 		child.set_player(player_nodes[0])
-		print("Emit")
 		child.set_rotation(PI / 2 * (randi() % 4))
 		self.add_child(child)
 
