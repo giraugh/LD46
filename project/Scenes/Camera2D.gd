@@ -51,6 +51,9 @@ func easeInOutQuint(x):
 
 
 func _on_TextureButton_pressed():
-	print_debug("Does this work" + state)
 	state = "game"
-	print_debug("Does this work" + state)
+
+	
+func _unhandled_key_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		show_menu()
