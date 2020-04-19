@@ -88,12 +88,18 @@ func _unhandled_key_input(event):
 		target_arrow.remove_from_group("node_in_plant")
 
 func did_hit(arrow):
+	# Grow Plant
 	grow()
+	
+	# Create Effect
 	$"sprite-okbox".animation = 'good'# box will reset itself after a delay
 	var effect = load("res://Scenes/ArrowTrail.tscn").instance()
 	effect.position = Vector2(0, 0)
 	effect.orientation = arrow.orientation
 	$"sprite-okbox".add_child(effect)
+	
+	# Add Score
+	$"/root/World/Scenery/Score".add_score(5)
 
 func did_miss(arrow):
 	shrink()
