@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Arrow.gd" type="Script" id=1]
+[ext_resource path="res://Src/Arrow.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Arrows/sprite-arrow.png" type="Texture" id=2]
 
 [node name="Arrow" type="Node2D"]
+visible = false
 position = Vector2( 81.9772, 35.0365 )
 script = ExtResource( 1 )
-speed = 50
 
 [node name="sprite-arrow" type="Sprite" parent="."]
 position = Vector2( -0.431545, 0.600376 )
