@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Sun.tscn" type="PackedScene" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://Sprites/Menu/menu-start-hover.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Menu/menu-start-pressed.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/sprite-okbox.png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.51244, 6.53003 )
 
 [node name="World" type="Node2D"]
 position = Vector2( 0, 2.51753 )
@@ -90,6 +93,14 @@ scale = Vector2( 2.5, 2.5 )
 z_index = 1
 texture = ExtResource( 10 )
 
+[node name="Area2D" type="Area2D" parent="Player"]
+position = Vector2( 1.79154, 31.4032 )
+scale = Vector2( 2.5, 2.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 509.802, 299.518 )
 offset = Vector2( 0, 80 )
@@ -114,4 +125,8 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="area_shape_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_exited" from="Player/Area2D" to="Player" method="_on_Area2D_area_shape_exited"]
+[connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_shape_exited" from="Player/Area2D" to="Player" method="_on_Area2D_body_shape_exited"]
 [connection signal="pressed" from="TextureButton" to="Camera2D" method="_on_TextureButton_pressed"]

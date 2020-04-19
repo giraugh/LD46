@@ -24,10 +24,14 @@ var heightMid = 0.0
 var bounce = 0.0
 var swing = 0.0
 export var growth = 0.0
+export var growth_target = 0.0
+export var growth_softness = 2
+export var growth_amount = 0.01
 export var leaf_difference = 25.0
 export var leaf_distance_from_head = 50.0
 export var left_leaf_next = true
 export var max_leaf_bounce = PI / 4
+var in_zone = false
 var leaves = []
 
 func _process(delta):
@@ -63,7 +67,43 @@ func _process(delta):
 
 		var wantedRotation = angle_player(leaf_height, global_time) + this_leaf_bounce
 		leaf_node.set_rotation((wantedRotation - rotation) / softness + rotation)
+	var controller = self.get_tree().get_nodes_in_group("arrowcontroller")[0]
+	
+	var arrows = controller.arrows
+	if len(arrows) > 0:
+		var first_arrow = arrows[0]
+		var direction = first_arrow["direction"]
+		var pressed = false
+		var correct_direction = false
+		if Input.is_action_just_pressed("ui_left"):
+			correct_direction = direction == "left"
+			pressed = true
+		if Input.is_action_just_pressed("ui_right"):
+			correct_direction = direction == "right"
+			pressed = true
+		if Input.is_action_just_pressed("ui_down"):
+			correct_direction = direction == "down"
+			pressed = true
+		if Input.is_action_just_pressed("ui_up"):
+			correct_direction = direction == "up"
+			pressed = true
+		if pressed:
+			if correct_direction and in_zone:
+				grow()
+			else:
+				shrink()
+		if pressed:
+			first_arrow["node"].queue_free()
+			controller.arrows.pop_front()
+	growth += (growth_target - growth) / growth_softness
 	update()
+
+func grow():
+	growth_target = min(1, growth_amount + growth_target)
+
+func shrink():
+	growth_target = max(0, growth_target - growth_amount)
+	
 
 func get_height (time):
 	var heightMid = lerp(minHeight, maxHeight, growth)
@@ -93,3 +133,20 @@ func _draw():
 		draw_line(Vector2(xposplayer(i, height, global_time) + 2.5,-i), Vector2(xposplayer(i+1, height,global_time) + 2.5, -(i+1)), Color("#3e8948"), 11)
 		draw_line(Vector2(xposplayer(i, height, global_time) - 5.5,-i), Vector2(xposplayer(i+1, height,global_time) - 5.5, -(i+1)), Color("#265c42"), 5)
 	
+
+
+func _on_Area2D_body_entered(body):
+	print("in")
+	in_zone = true
+
+func _on_Area2D_body_shape_exited(body_id, body, body_shape, area_shape):
+	in_zone = false
+
+
+func _on_Area2D_area_shape_entered(area_id, area, area_shape, self_shape):
+	print("in")
+	in_zone = true # Replace with function body.
+
+
+func _on_Area2D_area_shape_exited(area_id, area, area_shape, self_shape):
+	in_zone = false # Replace with function body.
