@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff4af730-4a5e-413a-80ec-c83832e508f7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/project/Arrow.gd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Scenes/Camera2D.gd" beforeDir="false" afterPath="$PROJECT_DIR$/project/Scenes/Camera2D.gd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Scenes/World.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/project/Scenes/World.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/Src/Arrow.gd" beforeDir="false" afterPath="$PROJECT_DIR$/project/Src/Arrow.gd" afterDir="false" />
+    <list default="true" id="ff4af730-4a5e-413a-80ec-c83832e508f7" name="Default Changelist" comment="Refactor project to simplify structure">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Scenes/Sun.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/project/Scenes/Sun.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/Src/Player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/project/Src/Player.gd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +51,7 @@
       <updated>1587186731946</updated>
       <workItem from="1587186735156" duration="178000" />
       <workItem from="1587263381553" duration="1807000" />
+      <workItem from="1587299675704" duration="1090000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor project to simplify structure">
       <created>1587264098469</created>
@@ -66,6 +66,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactor project to simplify structure" />
     <option name="LAST_COMMIT_MESSAGE" value="Refactor project to simplify structure" />
@@ -75,25 +85,42 @@
       <screen x="-516" y="-1417" width="2560" height="1417" />
     </state>
     <state x="356" y="-1194" key="CommitChangelistDialog2/60.23.1380.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587264097684" />
-    <state x="-416" y="-1317" width="2360" height="1217" key="DiffContextDialog" timestamp="1587263894174">
+    <state x="-416" y="-1317" width="2360" height="1217" key="DiffContextDialog" timestamp="1587304983129">
       <screen x="-516" y="-1417" width="2560" height="1417" />
     </state>
+    <state x="-416" y="-1317" width="2360" height="1217" key="DiffContextDialog/53.23.1387.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587304983129" />
     <state x="-416" y="-1317" width="2360" height="1217" key="DiffContextDialog/60.23.1380.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587263894174" />
-    <state x="212" y="-1070" key="MergeDialog" timestamp="1587263412261">
+    <state x="212" y="-1070" key="MergeDialog" timestamp="1587303082696">
       <screen x="-516" y="-1417" width="2560" height="1417" />
     </state>
+    <state x="212" y="-1070" key="MergeDialog/53.23.1387.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587303082696" />
     <state x="212" y="-1070" key="MergeDialog/60.23.1380.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587263412261" />
-    <state x="472" y="-995" key="MultipleFileMergeDialog" timestamp="1587263412334">
+    <state x="472" y="-995" key="MultipleFileMergeDialog" timestamp="1587303082769">
       <screen x="-516" y="-1417" width="2560" height="1417" />
     </state>
+    <state x="472" y="-995" key="MultipleFileMergeDialog/53.23.1387.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587303082769" />
     <state x="472" y="-995" key="MultipleFileMergeDialog/60.23.1380.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587263412334" />
+    <state x="470" y="-1065" key="RollbackChangesDialog" timestamp="1587302843717">
+      <screen x="-516" y="-1417" width="2560" height="1417" />
+    </state>
+    <state x="470" y="-1065" key="RollbackChangesDialog/53.23.1387.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587302843717" />
+    <state x="-416" y="-1317" width="2360" height="1217" key="VCS.FileHistoryDialog" timestamp="1587304833022">
+      <screen x="-516" y="-1417" width="2560" height="1417" />
+    </state>
+    <state x="-416" y="-1317" width="2360" height="1217" key="VCS.FileHistoryDialog/53.23.1387.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587304833022" />
     <state x="364" y="-973" key="Vcs.Push.Dialog.v2" timestamp="1587265192855">
       <screen x="-516" y="-1417" width="2560" height="1417" />
     </state>
     <state x="364" y="-973" key="Vcs.Push.Dialog.v2/60.23.1380.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587265192855" />
-    <state x="429" y="-1092" width="670" height="676" key="search.everywhere.popup" timestamp="1587263306138">
+    <state x="-416" y="-1317" width="2360" height="1217" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587291541093">
       <screen x="-516" y="-1417" width="2560" height="1417" />
     </state>
+    <state x="-416" y="-1317" width="2360" height="1217" key="com.intellij.history.integration.ui.views.FileHistoryDialog/54.23.1386.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587291541093" />
+    <state x="429" y="-1092" width="670" height="676" key="search.everywhere.popup" timestamp="1587304785838">
+      <screen x="-516" y="-1417" width="2560" height="1417" />
+    </state>
+    <state x="429" y="-1092" width="670" height="676" key="search.everywhere.popup/53.23.1387.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587304785838" />
+    <state x="429" y="-1092" width="670" height="676" key="search.everywhere.popup/54.23.1386.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587291526119" />
     <state x="429" y="-1092" width="670" height="676" key="search.everywhere.popup/60.23.1380.877/-516.-1417.2560.1417@-516.-1417.2560.1417" timestamp="1587263306138" />
   </component>
 </project>

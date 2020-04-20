@@ -7,11 +7,14 @@ func _process(delta):
 	# Set labels text to score and high score
 	$ScoreLabel.text = str(score)
 	$HighScoreLabel.text = "HI " + str(high_score)
-	pass
-
-# Call when starting new game to
-# record high score and reset current score
-func new_game():
+	
 	if score > high_score:
 		high_score = score
+
+# Call when starting new game to
+# reset current score
+func new_game():
 	score = 0
+
+func add_score(amount):
+	score += amount

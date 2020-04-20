@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Sun.tscn" type="PackedScene" id=2]
@@ -9,6 +9,10 @@
 [ext_resource path="res://Scenes/Camera2D.gd" type="Script" id=7]
 [ext_resource path="res://Sprites/Menu/menu-start-hover.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Menu/menu-start-pressed.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/sprite-okbox.png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.51244, 6.53003 )
 
 [node name="World" type="Node2D"]
 position = Vector2( 0, 2.51753 )
@@ -22,8 +26,8 @@ scale = Vector2( 6.26449, 6.26449 )
 texture = ExtResource( 3 )
 
 [node name="Sun" parent="Scenery" instance=ExtResource( 2 )]
-position = Vector2( 876.779, -546.492 )
-scale = Vector2( 2, 2 )
+position = Vector2( 826.131, -503.636 )
+scale = Vector2( 5, 5 )
 
 [node name="Backgrounds" type="Node2D" parent="."]
 position = Vector2( 1299.36, -2255.16 )
@@ -73,12 +77,28 @@ __meta__ = {
 }
 
 [node name="background-wall" type="Sprite" parent="."]
-position = Vector2( 789.404, 152.102 )
+position = Vector2( 790.169, 152.102 )
 scale = Vector2( 5.64457, 5.64457 )
 texture = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -37.642, 713.809 )
+position = Vector2( 2.94791, 624.846 )
+scale = Vector2( 2, 2 )
+
+[node name="sprite-okbox" type="Sprite" parent="Player" groups=[
+"player",
+]]
+position = Vector2( 1.79154, 31.4032 )
+scale = Vector2( 2.5, 2.5 )
+z_index = 1
+texture = ExtResource( 10 )
+
+[node name="Area2D" type="Area2D" parent="Player"]
+position = Vector2( 1.79154, 31.4032 )
+scale = Vector2( 2.5, 2.5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 509.802, 299.518 )
@@ -104,4 +124,8 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="area_shape_entered" from="Player/Area2D" to="Player" method="_on_Area2D_area_shape_entered"]
+[connection signal="area_shape_exited" from="Player/Area2D" to="Player" method="_on_Area2D_area_shape_exited"]
+[connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_Area2D_body_entered"]
+[connection signal="body_shape_exited" from="Player/Area2D" to="Player" method="_on_Area2D_body_shape_exited"]
 [connection signal="pressed" from="TextureButton" to="Camera2D" method="_on_TextureButton_pressed"]

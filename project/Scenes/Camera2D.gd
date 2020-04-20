@@ -22,6 +22,7 @@ func show_game():
 # Zoom out from window to hide game
 func show_menu():
 	state = 'menu'
+	get_node("/root/World/Scenery/Sun").emitting = false
 
 func _process(delta):
 	# Increment time
@@ -42,6 +43,10 @@ func _process(delta):
 	background.set_position(background_original_position.linear_interpolate(background_target_position, phase))
 	set_offset(Vector2(0,lerp(0,80, phase)))
 	set_zoom(Vector2(1,1) * zoom)
+	
+	if phase == 1:
+		var sun = get_node("/root/World/Scenery/Sun")
+		sun.emitting = true
 
 # Utility for easing function
 func easeInOutSine(x):

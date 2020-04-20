@@ -7,7 +7,7 @@ export var arrow_states: Dictionary = {
 }
 
 # Constants/Configurable variables
-export var MIN_SCALE: int = 1
+export var MIN_SCALE: int = .5
 export var MAX_SCALE: int = 3
 export var MOVEMENT_SPEED: int = 20
 export var INITAL_STATE: String = "default"
@@ -15,14 +15,14 @@ export var INITAL_STATE: String = "default"
 # Setters/Getters
 var current_state setget current_state_set, current_state_get
 var player setget set_player, get_player
+var orientation setget set_orientation, get_orientation
 
 # Spawn Variables
 onready var spawn_position = self.get_parent().global_position
+onready var sprite = get_node("Area2D/sprite-arrow")
 
 # Class variables
 var time = 0
-
-onready var sprite = get_node("sprite-arrow")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,24 +30,30 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# Increment time counter
 	time += delta
+	
+	# Set visible once scale can be set correctly
 	self.visible = true
-	self.acc_toward_player(delta)
 	self.update_relative_scale()
-	if self.get_distance_to_player() < MOVEMENT_SPEED:
+	
+	# Move towards player
+	self.update_position()
+	
+	if not self.get_node("VisibilityNotifier2D").is_on_screen():
 		queue_free()
 
-func acc_toward_player(delta):
-	var player_pos = player.global_position
-	var direction = (player_pos - global_position).normalized()
-	set_position(get_position() + direction * MOVEMENT_SPEED  * delta)
-
+func update_position():
+	var duration = 4
+	var x = (time / duration)
+	var percent = easeInSin(min(1, max(0, x)))
+	self.global_position = self.get_parent().global_position.linear_interpolate(player.global_position, percent)
 
 # Scale the Arrow size as it gets close to the player
 func update_relative_scale():
 	var dist1 = self.get_distance_to_player()
-	var current_scale = (150.0/dist1)
-	self.set_scale(Vector2(current_scale, current_scale))
+	var current_scale = lerp(MIN_SCALE, MAX_SCALE, min(1, 1 - dist1 / self.get_original_distance()))
+	self.set_scale(Vector2.ONE * current_scale)
 
 # Get the distance between this arrows spawn point and the current player position
 func get_original_distance():
@@ -78,3 +84,21 @@ func current_state_set(new_state):
 
 func current_state_get():
 	return current_state
+
+func easeInSin(x):
+	return 0.2 * x + sin((x * PI) / 2)
+	
+func get_orientation():
+	if orientation == 0:
+		return "up"
+	elif orientation == 1:
+		return "right"
+	elif orientation == 2:
+		return "down"
+	elif orientation == 3:
+		return "left"
+
+func set_orientation(new_orientation: int):
+	self.set_rotation(PI / 2 * new_orientation)
+	orientation = new_orientation
+	
