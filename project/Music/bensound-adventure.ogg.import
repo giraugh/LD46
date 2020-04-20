@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bensound-adventure.ogg-56c4bd36ecfe9ac2f421b7a975605755.oggstr"
+
+[deps]
+
+source_file="res://Music/bensound-adventure.ogg"
+dest_files=[ "res://.import/bensound-adventure.ogg-56c4bd36ecfe9ac2f421b7a975605755.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

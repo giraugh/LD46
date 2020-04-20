@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bensound-sweet.ogg-70e87a810cd852142475f69d288092b1.oggstr"
+
+[deps]
+
+source_file="res://Music/bensound-sweet.ogg"
+dest_files=[ "res://.import/bensound-sweet.ogg-70e87a810cd852142475f69d288092b1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -8,6 +8,7 @@ var background_target_position = Vector2(221,587)
 var zoom_start = 4
 var zoom_end = 1.3
 var global_time = 0
+var in_game = false
 var state = 'menu'
 
 func _ready():
@@ -44,9 +45,13 @@ func _process(delta):
 	set_offset(Vector2(0,lerp(0,80, phase)))
 	set_zoom(Vector2(1,1) * zoom)
 	
-	if phase == 1:
+	if phase == 1 and not in_game:
+		in_game = true
 		var sun = get_node("/root/World/Scenery/Sun")
 		sun.emitting = true
+		var music_player = get_node("/root/World/MusicPlayer")
+		music_player.play_game_music()
+		music_player.play()
 
 # Utility for easing function
 func easeInOutSine(x):

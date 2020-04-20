@@ -2,7 +2,7 @@ extends Node2D
 
 
 export var player_group_id = "player"
-export var emits_per_second = 1.0
+export var emits_per_second = 1.76233333333
 # one of 0, 1, 2 (0 is sad, 1 is medium, 2 is happy)
 export(int, "Sad", "Ok", "Happy") var happy_state = 0
 export var emitting = false

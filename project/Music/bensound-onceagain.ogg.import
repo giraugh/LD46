@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bensound-onceagain.ogg-82413cf4a3b5919daec29bf547492f6c.oggstr"
+
+[deps]
+
+source_file="res://Music/bensound-onceagain.ogg"
+dest_files=[ "res://.import/bensound-onceagain.ogg-82413cf4a3b5919daec29bf547492f6c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

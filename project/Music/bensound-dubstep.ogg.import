@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bensound-dubstep.ogg-5e13c1f49682de075a487a4e21191175.oggstr"
+
+[deps]
+
+source_file="res://Music/bensound-dubstep.ogg"
+dest_files=[ "res://.import/bensound-dubstep.ogg-5e13c1f49682de075a487a4e21191175.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
