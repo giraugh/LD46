@@ -86,6 +86,7 @@ texture = ExtResource( 5 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 2.94791, 624.846 )
 scale = Vector2( 2, 2 )
+speed = 0.881
 
 [node name="sprite-okbox" type="Sprite" parent="Player" groups=[
 "player",
