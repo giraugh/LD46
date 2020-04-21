@@ -14,6 +14,7 @@ __meta__ = {
 }
 
 [node name="HighScoreLabel" type="Label" parent="."]
+visible = false
 margin_left = 93.6275
 margin_right = 133.628
 margin_bottom = 14.0

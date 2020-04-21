@@ -34,6 +34,8 @@ export var left_leaf_next = true
 export var max_leaf_bounce = PI / 4
 var in_zone = false
 var leaves = []
+var sad_time = 0
+var sad_duration = 1.5
 
 func _process(delta):
 	global_time += delta
@@ -54,6 +56,13 @@ func _process(delta):
 	for leaf in leaves:
 		update_leaf(leaf, height)
 	growth += (growth_target - growth) / growth_softness
+	
+	if sad_time <= 0:
+		$head.animation = "happy"
+	else:
+		$head.animation = "sad"
+		sad_time -= delta
+	
 	update()
 	
 func update_leaf(leaf, height):
@@ -104,6 +113,9 @@ func on_arrow_miss(arrow):
 	arrow.current_state = "bad"
 	arrow.remove_from_group("node_in_plant")
 	$"sprite-okbox".animation = 'bad' # box will reset itself after a delay
+	var sun = $"/root/World/Scenery/Sun"
+	sun.happy_state = 0
+	sad_time = sad_duration
 	
 func on_arrow_hit(arrow):
 	print_debug("Action Hit")
@@ -118,7 +130,10 @@ func on_arrow_hit(arrow):
 	$"sprite-okbox".add_child(effect)
 	
 	# Add Score
-	#$"/root/World/Scenery/Score".add_score(5)
+	var sun = $"/root/World/Scenery/Sun"
+	sun.happy_state = min(2, sun.happy_state + 1)
+	$"/root/World/Scenery/Score".add_score(1)
+
 
 func grow():
 	growth_target = min(1, growth_amount + growth_target)

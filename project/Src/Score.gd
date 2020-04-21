@@ -5,7 +5,7 @@ var high_score = 0
 
 func _process(delta):
 	# Set labels text to score and high score
-	$ScoreLabel.text = str(score)
+	$ScoreLabel.text = "SCORE " + str(score)
 	$HighScoreLabel.text = "HI " + str(high_score)
 	
 	if score > high_score:
