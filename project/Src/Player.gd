@@ -103,12 +103,22 @@ func on_arrow_miss(arrow):
 	self.shrink()
 	arrow.current_state = "bad"
 	arrow.remove_from_group("node_in_plant")
+	$"sprite-okbox".animation = 'bad' # box will reset itself after a delay
 	
 func on_arrow_hit(arrow):
 	print_debug("Action Hit")
 	grow()
 	arrow.current_state = "great"
 	arrow.remove_from_group("node_in_plant")
+	# Create Effect
+	$"sprite-okbox".animation = 'good'# box will reset itself after a delay
+	var effect = load("res://Scenes/ArrowTrail.tscn").instance()
+	effect.position = Vector2(0, 0)
+	effect.orientation = arrow.orientation
+	$"sprite-okbox".add_child(effect)
+	
+	# Add Score
+	#$"/root/World/Scenery/Score".add_score(5)
 
 func grow():
 	growth_target = min(1, growth_amount + growth_target)
@@ -127,7 +137,16 @@ func angle_player(h, time):
 
 	return atan(periods * 2 * PI * (h / height) / height * swing * cos(periods * 2 * PI * (h / height + time * speed)) )
 
+func did_hit(arrow):
+	# Grow Plant
+	grow()
 	
+	
+
+func did_miss(arrow):
+	shrink()
+
+
 func head_angle(time):
 	var height = get_height(time)
 	return angle_player(height, time)
