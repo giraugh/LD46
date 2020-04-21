@@ -27,7 +27,7 @@ export var growth = 0.0
 export var growth_target = 0.0
 export var growth_softness = 2
 export var growth_amount = 0.01
-export var shrink_amount = 0.05
+export var shrink_amount = 0.03
 export var leaf_difference = 25.0
 export var leaf_distance_from_head = 50.0
 export var left_leaf_next = true
@@ -116,6 +116,7 @@ func on_arrow_miss(arrow):
 	var sun = $"/root/World/Scenery/Sun"
 	sun.happy_state = 0
 	sad_time = sad_duration
+	$"/root/World/Scenery/Score".add_score(-1)
 	
 func on_arrow_hit(arrow):
 	print_debug("Action Hit")
