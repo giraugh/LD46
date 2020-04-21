@@ -8,7 +8,7 @@ export var arrow_states: Dictionary = {
 
 # Constants/Configurable variables
 export var MIN_SCALE: int = .5
-export var MAX_SCALE: int = 3
+export var MAX_SCALE: int = 5
 export var MOVEMENT_SPEED: int = 20
 export var INITAL_STATE: String = "default"
 

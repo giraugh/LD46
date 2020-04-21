@@ -18,3 +18,5 @@ func new_game():
 
 func add_score(amount):
 	score += amount
+	if score < 0: 
+		score = 0
